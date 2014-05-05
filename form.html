@@ -45,6 +45,9 @@
 
   <div class="tab-content" id="ch-af-tabcontent">
           <div class="tab-pane active" id="firsttabid">
+            <div class="alert alert-info">
+                This is a infor for tab 1
+            </div>
 
             <label for="global1">global1</label>
             <input type=\"text\" id="global1" value="" placeholder="global1">
@@ -58,6 +61,9 @@
 
           </div>
           <div class="tab-pane" id="secondtabid">
+            <div class="alert alert-info">
+                This is a infor for tab 2
+            </div>
 
             <label for="global2">global2</label>
             <input type=\"text\" id="global2" value="" placeholder="global2">
@@ -73,6 +79,9 @@
 
           </div>
           <div class="tab-pane" id="thirdtabid">
+            <div class="alert alert-info">
+                This is a infor for tab 3
+            </div>
 
             <label for="thirdtabid_content1">thirdtabid_content1</label>
             <input type=\"text\" id="thirdtabid_content1" value="" placeholder="thirdtabid_content1">
@@ -103,11 +112,9 @@
 </div>
 
 
-<p id="action" style="display:none">
-</p>
+<p id="action" style="display:none"></p>
 
-<p id="save_xsrf_token" style="display:none">
-</p>
+<p id="save_xsrf_token" style="display:none"></p>
 
 <p id="hastitle" style = "display:none">
 </p>
@@ -187,11 +194,12 @@ function ch_af_ajaxsubmitform(closewindow){
   console.log("ch_af_ajaxsubmitform");
   if (ch_af_formChanged() == true){
     payload = ch_af_collectPayload(false);
-    console.log(payload);
+    // console.log(payload);
 
     var request = {"save_xsrf_token":$('#save_xsrf_token').text(),
                    "payload":payload
                   }
+    console.log(request);
     var requestjsonstr = JSON.stringify(request);
 
     var form = document.createElement('form');
